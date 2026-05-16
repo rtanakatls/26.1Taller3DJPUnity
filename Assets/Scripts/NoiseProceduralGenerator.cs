@@ -21,7 +21,7 @@ public class NoiseProceduralGenerator : MonoBehaviour
             for (int j = 0; j < gridSize; j++)
             {
                 float height = Mathf.PerlinNoise(i / scale + seed, j / scale + seed) * maxHeight;
-                Vector3 position = new Vector3(i, height / 2, j);
+                Vector3 position = transform.position+new Vector3(i, height / 2, j);
                 GameObject obj = Instantiate(prefab);
                 obj.transform.position = position;
                 obj.transform.localScale = new Vector3(1, height, 1);
